@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>PAGINA DE INICIO</h1>
+	<h3>
+		La fecha es: <span th:text="${fecha}"></span>
+	</h3>	
+	
+	-->
+	<h3 style="color:red" th:each="valor : ${lista}">
+    	<span th:text="${valor}"></span>
+	</h3>
+</body>
+</html>

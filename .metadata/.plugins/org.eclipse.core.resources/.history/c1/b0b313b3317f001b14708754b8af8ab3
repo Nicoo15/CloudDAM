@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="casa" class="entidad.Casa">
+		<property name="precio" value="180000"></property>
+		<property name="direccion" ref="direccionCasa"></property>
+		<property name="propietario" ref="propietario"></property>
+		<property name="inquilinos" ref="listaInquilinos"></property>
+		<property name="habitaciones" ref="listaHabitaciones"></property>
+	</bean>
+
+	<bean id="direccionCasa" class="entidad.Direccion">
+		<property name="tipoVia" value="Calle"></property>
+		<property name="nombreVia" value="Ernest"></property>
+		<property name="pais" value="Espania"></property>
+		<property name="cp" value="28942"></property>
+	</bean>
+
+	<bean id="direccionPropietario" class="entidad.Direccion">
+		<property name="tipoVia" value="Calle"></property>
+		<property name="nombreVia" value="Mayor"></property>
+		<property name="pais" value="Espania"></property>
+		<property name="codPostal" value="28945"></property>
+	</bean>
+
+
+	<bean id="propietario" class="entidad.Persona">
+		<property name="dni" value="49152201"></property>
+		<property name="nombre" value="Nico"></property>
+		<property name="peso" value="80"></property>
+		<property name="direccion" ref="direccionPropietario"></property>
+	</bean>
+
+
+	<bean id="listaHabitaciones" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="habitacion1" />
+				<ref bean="habitacion2" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="listaInquilinos" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="Juan" />
+				<ref bean="Mario" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="marta" class="entidad.Persona" scope="singleton">
+		<property name="dni" value="48959184"></property>
+		<property name="nombre" value="Mario"></property>
+		<property name="peso" value="75"></property>
+		<property name="direccion">
+			<bean class="entidad.Direccion">
+				<property name="tipoVia" value="Calle"></property>
+				<property name="nombreVia" value="Menor"></property>
+				<property name="pais" value="España"></property>
+				<property name="cp" value="28942"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="pepe" class="entidad.Persona" scope="singleton">
+		<property name="dni" value="47252127"></property>
+		<property name="nombre" value="Juan"></property>
+		<property name="peso" value="87"></property>
+		<property name="direccion">
+			<bean class="entidad.Direccion">
+				<property name="tipoVia" value="Calle"></property>
+				<property name="nombreVia" value="Real Madrid"></property>
+				<property name="pais" value="Espania"></property>
+				<property name="cp" value="28942"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="habitacion1" class="entidad.Habitacion">
+		<property name="tipo" value="cocina"></property>
+		<property name="area" value="30"></property>
+		<property name="tieneVentana" value="true"></property>
+	</bean>
+
+	<bean id="habitacion2" class="entidad.Habitacion">
+		<property name="tipo" value="dormitorio"></property>
+		<property name="area" value="20"></property>
+		<property name="tieneVentana" value="false"></property>
+	</bean>
+</beans>

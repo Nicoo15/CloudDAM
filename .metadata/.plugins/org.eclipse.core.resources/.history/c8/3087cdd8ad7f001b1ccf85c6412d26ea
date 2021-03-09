@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<bean class="entidad.Espada" id="espada">
+		<property name="dañoMinimo" value="10"></property>
+		<property name="dañoMaximo" value="25"></property>
+		<property name="tipo" value="Hierro"></property>
+		<property name="procentajeMagiaCaotica" value="20"></property>
+	</bean>
+
+	<bean class="entidad.Rezo" id="rezo">
+		<property name="dañoMinimo" value="5"></property>
+		<property name="dañoMaximo" value="35"></property>
+		<property name="tipo" value="Poderoso"></property>
+		<property name="procentajeMagiaCaotica" value="20"></property>
+	</bean>
+	<bean class="entidad.Hechizo" id="hechizo">
+		<property name="dañoMinimo" value="7"></property>
+		<property name="dañoMaximo" value="30"></property>
+		<property name="tipo" value="Furia"></property>
+		<property name="procentajeMagiaCaotica" value="10"></property>
+	</bean>
+
+	<!-- ............................................................................................................................. -->
+
+	<bean class="entidad.Guerrero" id="GuerreroEspada">
+		<property name="nombre" value="Ragnar"></property>
+		<property name="puntosVida" value="150"></property>
+		<property name="arma" value="espada"></property>
+		<property name="nivel" value="5"></property>
+
+	</bean>
+
+
+
+	<bean class="entidad.Curandero" id="Curandero">
+		<property name="nombre" value="Rollo"></property>
+		<property name="puntosVida" value="200"></property>
+		<property name="arma" value="rezo"></property>
+		<property name="nivel" value="5"></property>
+
+	</bean>
+
+	<bean class="entidad.Mago" id="Mago">
+		<property name="nombre" value="Floki"></property>
+		<property name="puntosVida" value="130"></property>
+		<property name="arma" value="hechizo"></property>
+		<property name="nivel" value="6"></property>
+
+	</bean>
+
+</beans>

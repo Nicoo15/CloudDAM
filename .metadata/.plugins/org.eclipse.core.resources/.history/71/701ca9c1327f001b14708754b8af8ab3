@@ -1,0 +1,37 @@
+package entidad;
+
+public class Habitacion {
+	private TipoHabitacion tipo;
+	private int m2;
+	private boolean tieneVentana;
+
+	public TipoHabitacion getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoHabitacion tipo) {
+		this.tipo = tipo;
+	}
+
+	public int getM2() {
+		return m2;
+	}
+
+	public void setM2(int m2) {
+		this.m2 = m2;
+	}
+
+	public boolean isTieneVentana() {
+		return tieneVentana;
+	}
+
+	public void setTieneVentana(boolean tieneVentana) {
+		this.tieneVentana = tieneVentana;
+	}
+
+	@Override
+	public String toString() {
+		return "\n\tHabitacion [tipo=" + tipo + ", area=" + area + ", tieneVentana=" + tieneVentana + "]";
+	}
+
+}

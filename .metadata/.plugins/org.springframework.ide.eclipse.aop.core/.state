@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="demo"/>
+<aop-project name="Ejercicio1Casa"/>
+<aop-project name="03_SpringBoot"/>
+<aop-project name="Ejercicio1"/>
+<aop-project name="Ejercicio2"/>
+<aop-project name="01_FundamentosSpring"/>
+<aop-project name="EjercicioVideojuego"/>
+</aop-reference-model>

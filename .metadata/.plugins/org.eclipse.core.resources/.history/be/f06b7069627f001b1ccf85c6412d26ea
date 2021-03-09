@@ -1,0 +1,81 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import entidad.Arma;
+import entidad.Espada;
+import entidad.Guerrero;
+import entidad.Curandero;
+import entidad.Hechizo;
+import entidad.Mago;
+import entidad.Personaje;
+import entidad.Rezo;
+import entidad.Util;
+import negocio.Arena;
+
+public class ClasePrincipal {
+
+	public static void main(String[] args) {
+
+		context = new ClassPathXmlApplicationContext("recursos.context.xml");
+
+		Guerrero p1 = new Guerrero();
+		Espada espada = new Espada();
+
+		Curandero p2 = new Curandero();
+		Rezo rezo = new Rezo();
+
+		Mago p3 = new Mago();
+		Hechizo hechizo = new Hechizo();
+
+		espada.setDañoMaximo(25);
+		espada.setDañoMinimo(10);
+		espada.setProcentajeMagiaCaotica(20);
+
+		p1.setNombre("Ragnar");
+		p1.setArma(espada);
+		p1.setPuntosVida(150);
+
+		rezo.setDañoMaximo(35);
+		rezo.setDañoMinimo(5);
+		espada.setProcentajeMagiaCaotica(20);
+
+		p2.setNombre("Rollo");
+		p2.setArma(rezo);
+		p2.setPuntosVida(200);
+		;
+
+		hechizo.setDañoMaximo(30);
+		hechizo.setDañoMinimo(7);
+		hechizo.setProcentajeMagiaCaotica(10);
+
+		p3.setNombre("Loki");
+		p3.setArma(hechizo);
+		p3.setPuntosVida(130);
+
+		List<Personaje> listaPersonajes = new ArrayList<Personaje>();
+		listaPersonajes.add(p1);
+		listaPersonajes.add(p2);
+		listaPersonajes.add(p3);
+
+		int contrincante1 = Util.generadorNumeros(0, 2);
+		int contrincante2 = 0;
+
+		do {
+			contrincante2 = Util.generadorNumeros(0, 2);
+		} while (contrincante1 == contrincante2);
+
+		Personaje luchador1 = listaPersonajes.get(contrincante1);
+		Personaje luchador2 = listaPersonajes.get(contrincante2);
+
+		Arena arena = new Arena(luchador1, luchador2);
+		Personaje pg = arena.combate();
+
+		System.out.println("Ha ganado la batalla" + pg.getNombre());
+	}
+
+}

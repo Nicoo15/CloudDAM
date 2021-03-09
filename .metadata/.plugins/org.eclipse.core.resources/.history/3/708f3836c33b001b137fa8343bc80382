@@ -1,0 +1,9 @@
+package entidad;
+
+import java.util.Date;;
+
+public class Nomina {
+	private int salario;
+	private Date fecha;
+
+}
